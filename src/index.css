@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Gill+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Bralink';
+  src: url('/fonts/Bralink.woff2') format('woff2');
+}
+
+:root {
+  --color-dark-green: #165927;
+  --color-soft-green: #7A8C72;
+  --color-cream: #F2F1DF;
+  --color-orange: #F29B30;
+  --color-orange-hover: #F28A2E;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-cream font-gill-sans text-gray-800;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bralink text-dark-green;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-orange hover:bg-orange-hover text-white font-semibold py-3 px-6 rounded-lg 
+           transition-colors duration-300 ease-in-out;
+  }
+
+  .nav-link {
+    @apply text-dark-green hover:text-orange transition-colors duration-300 font-medium;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
